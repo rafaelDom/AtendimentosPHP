@@ -1,0 +1,28 @@
+Maquina x64, versão do php 7.3
+
+Adicionar no php.ini:
+extension=php_pdo_sqlsrv_73_ts_x64 -> copie a dll para pasta ext do php
+
+
+Script para criação do BD:
+
+USE [Atendimentos]
+GO
+
+/****** Object:  Table [dbo].[atendimento]    Script Date: 07/19/2019 17:05:16 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[atendimento](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[cliente] [nvarchar](50) NOT NULL,
+	[cpf] [nvarchar](50) NOT NULL,
+	[dataAtendimento] [nvarchar](50) NOT NULL,
+	[motivo] [nvarchar](max) NOT NULL,
+	[solucao] [nvarchar](max) NOT NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
